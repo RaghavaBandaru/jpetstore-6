@@ -12,17 +12,17 @@
       args:
         chdir: /var/lib/jenkins/workspace/petstore
 
-    - name: Tag Docker Image
-      command: docker tag petstore:latest raghavabandaru854/petstore:latest 
+    - name: tag image
+      command: docker tag petstore:latest harshitgupta21/petstore:latest 
 
     - name: Log in to Docker Hub
       community.docker.docker_login:
         registry_url: https://index.docker.io/v1/
-        username: raghavabandaru854
-        password: Rags@1994.  # Consider using Ansible Vault for sensitive information
+        username: raghavabandaru854@gmail.com 
+        password: Rags@1994.
 
-    - name: Push Docker Image
-      command: docker push raghavabandaru854/petstore:latest
+    - name: Push image
+      command: docker push harshitgupta21/petstore:latest
 
-    - name: Run Container
-      command: docker run -d --name pet1 -p 8081:8080 raghavabandaru854/petstore:latest
+    - name: Run container
+      command: docker run -d --name pet1 -p 8081:8080 harshitgupta21/petstore:latest
